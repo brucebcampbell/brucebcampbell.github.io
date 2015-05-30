@@ -9,8 +9,8 @@
   <meta name="author" content="Bruce Campbell">
 
   
-  <meta name="description" content="Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a
-differential operator, typically the &hellip;">
+  <meta name="description" content="This is the class declaration from the multiclass Support Vector Machine implemented in klMatrix.
+This uses the Sequential minimal optimization (SMO &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -127,6 +127,143 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/30/multiclasssvm/">Support Vector Machines</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-30T23:22:44+00:00" pubdate data-updated="true">May 30<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is the class declaration from the multiclass Support Vector Machine implemented in klMatrix.
+This uses the Sequential minimal optimization (SMO) algorithm for solving the quadratic programming (QP) 
+problem that arises during the training of the SVM.  The algorithm follows the work of </p>
+
+<p>@phdthesis{borer2003new,
+  title={New support vector algorithms for multicategorical data applied to real-time object recognition},
+  author={Borer, Silvio},
+  year={2003},
+  school={Citeseer}
+}</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">template &lt;class TYPE&gt; class klMulticlassSVMTrain : public klSamplePopulation&lt;TYPE&gt;
+</span><span class="line">{
+</span><span class="line">public:
+</span><span class="line">    //These are the outputs of the training operation
+</span><span class="line">    klVector&lt;TYPE&gt; _lagMults;
+</span><span class="line">    klVector&lt;TYPE&gt; _intercepts;
+</span><span class="line">    klMatrix&lt;TYPE&gt; _supportPoints;
+</span><span class="line">    klVector&lt;int&gt;  _supportClasses;
+</span><span class="line">
+</span><span class="line">
+</span><span class="line">    //Inputs of the training operation
+</span><span class="line">    klVector&lt;int&gt; _trainingClasses;
+</span><span class="line">
+</span><span class="line">    //	  nu                - fraction of the distribution to exclude - called
+</span><span class="line">    //                     "outlierFraction" in much of the rest of the SVM code
+</span><span class="line">    //						p x 1 array of desired fraction of outliers, one for each of p classes.
+</span><span class="line">    klVector&lt;TYPE&gt; _outlierFraction;
+</span><span class="line">
+</span><span class="line">    //  mixingCoeff =0.5 is a good place to start
+</span><span class="line">    TYPE _mixingCoeff;
+</span><span class="line">
+</span><span class="line">    unsigned int _numClasses;
+</span><span class="line">
+</span><span class="line">    //	double smoThresh=1/10,000; is the  tolerance for SMO algorithm
+</span><span class="line">    TYPE _smoThresh;
+</span><span class="line">
+</span><span class="line">
+</span><span class="line">    //The width of RBF kernel.
+</span><span class="line">    double _sigma;
+</span><span class="line">
+</span><span class="line">    TYPE RadialBasisFunctionKernel(TYPE* x, TYPE* y) 
+</span><span class="line">    {
+</span><span class="line">        unsigned int     n;
+</span><span class="line">        TYPE  sum, d;
+</span><span class="line">
+</span><span class="line">        sum = 0;
+</span><span class="line">        for(n = 0; n &lt;getColumns(); n++)
+</span><span class="line">        {
+</span><span class="line">            d = x[n] - y[n];
+</span><span class="line">            sum += d * d;
+</span><span class="line">        }
+</span><span class="line">
+</span><span class="line">        return(std::exp(-   sum /(2.0 * _sigma * _sigma)) );  
+</span><span class="line">    }
+</span><span class="line"> ...</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -285,6 +422,10 @@ git push origin gh-pages</code></pre></noscript></div>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/05/30/multiclasssvm/">Support Vector Machines</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/03/09/testing-mathjax/">Testing MathJax</a>
