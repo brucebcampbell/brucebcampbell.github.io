@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Aloidia Analytics]]></title>
-  <link href="http://www.brucebcampbell.github.io/atom.xml" rel="self"/>
-  <link href="http://www.brucebcampbell.github.io/"/>
-  <updated>2014-11-29T23:27:24+00:00</updated>
-  <id>http://www.brucebcampbell.github.io/</id>
+  <title><![CDATA[Bruce B Campbell]]></title>
+  <link href="http://brucebcampbell.github.io/atom.xml" rel="self"/>
+  <link href="http://brucebcampbell.github.io/"/>
+  <updated>2015-05-30T15:17:45+00:00</updated>
+  <id>http://brucebcampbell.github.io/</id>
   <author>
     <name><![CDATA[Bruce Campbell]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Testing MathJax]]></title>
-    <link href="http://www.brucebcampbell.github.io/blog/2014/03/09/testing-mathjax/"/>
+    <link href="http://brucebcampbell.github.io/blog/2014/03/09/testing-mathjax/"/>
     <updated>2014-03-09T23:44:50+00:00</updated>
-    <id>http://www.brucebcampbell.github.io/blog/2014/03/09/testing-mathjax</id>
+    <id>http://brucebcampbell.github.io/blog/2014/03/09/testing-mathjax</id>
     <content type="html"><![CDATA[<p>Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a
 differential operator, typically the Laplacian.   Inferring the geometry from the spectra is a type of inverse
 problem since two non isometric manifolds may share the same spectra.  Going the other way, we encounter
@@ -59,9 +59,9 @@ Given <script type="math/tex">f(x,y)</script>, we get a scale space representati
   
   <entry>
     <title type="html"><![CDATA[Test Code Embedding]]></title>
-    <link href="http://www.brucebcampbell.github.io/blog/2014/03/09/test-code-embedding/"/>
+    <link href="http://brucebcampbell.github.io/blog/2014/03/09/test-code-embedding/"/>
     <updated>2014-03-09T23:22:44+00:00</updated>
-    <id>http://www.brucebcampbell.github.io/blog/2014/03/09/test-code-embedding</id>
+    <id>http://brucebcampbell.github.io/blog/2014/03/09/test-code-embedding</id>
     <content type="html"><![CDATA[<p>A code snippet from klMatrix</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -160,9 +160,9 @@ Given <script type="math/tex">f(x,y)</script>, we get a scale space representati
   
   <entry>
     <title type="html"><![CDATA[Testing GistPlugin]]></title>
-    <link href="http://www.brucebcampbell.github.io/blog/2014/03/09/testing-gistplugin/"/>
+    <link href="http://brucebcampbell.github.io/blog/2014/03/09/testing-gistplugin/"/>
     <updated>2014-03-09T23:15:07+00:00</updated>
-    <id>http://www.brucebcampbell.github.io/blog/2014/03/09/testing-gistplugin</id>
+    <id>http://brucebcampbell.github.io/blog/2014/03/09/testing-gistplugin</id>
     <content type="html"><![CDATA[<p>This is a gist of instruction to host doxygen generated code documentation to githubs gh-pages web hosting. </p>
 <div><script src="https://gist.github.com/d7a6791ac1933fbd7f1d.js"></script>
 <noscript><pre><code>Example Doxygen Content http://wavescholar.github.io/klMatrixCore/ 
