@@ -9,8 +9,8 @@
   <meta name="author" content="Bruce Campbell">
 
   
-  <meta name="description" content="Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a
-differential operator, typically the &hellip;">
+  <meta name="description" content="This is the class declaration from the multiclass Support Vector Machine implemented in klMatrix.
+This uses the Sequential minimal optimization (SMO &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -133,7 +133,7 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/03/09/testing-mathjax/">Testing MathJax</a></h1>
+      <h1 class="entry-title"><a href="/blog/2015/05/30/test-code-embedding/">Support Vector Machines</a></h1>
     
     
       <p class="meta">
@@ -149,85 +149,16 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
   
 
 
-<time datetime="2014-03-09T23:44:50+00:00" pubdate data-updated="true">Mar 9<span>th</span>, 2014</time>
+<time datetime="2015-05-30T23:22:44+00:00" pubdate data-updated="true">May 30<span>th</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a
-differential operator, typically the Laplacian.   Inferring the geometry from the spectra is a type of inverse
-problem since two non isometric manifolds may share the same spectra.  Going the other way, we encounter
-isoperimetric inequalities and spectral gap theorems.  “Can One Hear the Shape of a Drum?” was the of an article
- by Mark Kac in the American Mathematical Monthly 1966.   The frequencies at which a drum vibrate depends on its shape.
- The elliptic PDE  <script type="math/tex"> \nabla^2 A + k A = 0</script> tells us the frequencies if we know the shape.
- These frequencies are the eigenvalues of the Laplacian in the region.
- Can the spectrum of the Laplacian  tell us the shape if we know the frequencies?  Hermann Weyl showed the eigenvalues
- of the Laplacian in the compact domain <script type="math/tex">\Omega</script> are distributed according to</p>
-
-<script type="math/tex; mode=display"> N(\lambda) \sim (2 \pi)^{-d) \omega_d \lambda^{\frac{d}{2}} vol(\Omega}</script>
-
-<p>The Laplace Beltrami operator is the generalization of
- <script type="math/tex">\nabla \circ \nabla = \Delta</script> to <script type="math/tex">\mathcal{M}</script></p>
-
-<script type="math/tex; mode=display">\Delta f = tr(H(f))</script>
-
-<p>In the exterior calculus we have <script type="math/tex"> \Delta f = d^*d \; f</script>.</p>
-
-<p>The Laplacian of a Gaussian has well known applications in image processing.
-Given <script type="math/tex">f(x,y)</script>, we get a scale space representation when we convolve by</p>
-
-<script type="math/tex; mode=display">g(x,y,t) = \frac{e^{x^2+y^2}}{2 \pi t}</script>
-
-<script type="math/tex; mode=display">L(x,y,t) =g(x,y,t) \ast f(x,y)</script>
-
-<p>Applying <script type="math/tex">\Delta</script> to <script type="math/tex">L(x,y,t)</script> gives response to blobs of extent <script type="math/tex">\sqrt{t}</script></p>
-
-<p>There is a well known connection between diffusion processes and Schrodinger operators;</p>
-
-<script type="math/tex; mode=display"> H = \nabla^2 + V(x) \Phi \in L^2(R^n) </script>
-
-<script type="math/tex; mode=display">H \Phi = E \Phi </script>
-
-<script type="math/tex; mode=display">E = \sigma(H) </script>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/09/test-code-embedding/">Test Code Embedding</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-09T23:22:44+00:00" pubdate data-updated="true">Mar 9<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A code snippet from klMatrix</p>
+  <div class="entry-content"><p>This is the class declaration from the multiclass Support Vector Machine implemented in klMatrix.
+This uses the Sequential minimal optimization (SMO) algorithm for solving the quadratic programming (QP) 
+problem that arises during the training of the SVM.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -332,6 +263,77 @@ Given <script type="math/tex">f(x,y)</script>, we get a scale space representati
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/03/09/testing-mathjax/">Testing MathJax</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-09T23:44:50+00:00" pubdate data-updated="true">Mar 9<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a
+differential operator, typically the Laplacian.   Inferring the geometry from the spectra is a type of inverse
+problem since two non isometric manifolds may share the same spectra.  Going the other way, we encounter
+isoperimetric inequalities and spectral gap theorems.  “Can One Hear the Shape of a Drum?” was the of an article
+ by Mark Kac in the American Mathematical Monthly 1966.   The frequencies at which a drum vibrate depends on its shape.
+ The elliptic PDE  <script type="math/tex"> \nabla^2 A + k A = 0</script> tells us the frequencies if we know the shape.
+ These frequencies are the eigenvalues of the Laplacian in the region.
+ Can the spectrum of the Laplacian  tell us the shape if we know the frequencies?  Hermann Weyl showed the eigenvalues
+ of the Laplacian in the compact domain <script type="math/tex">\Omega</script> are distributed according to</p>
+
+<script type="math/tex; mode=display"> N(\lambda) \sim (2 \pi)^{-d) \omega_d \lambda^{\frac{d}{2}} vol(\Omega}</script>
+
+<p>The Laplace Beltrami operator is the generalization of
+ <script type="math/tex">\nabla \circ \nabla = \Delta</script> to <script type="math/tex">\mathcal{M}</script></p>
+
+<script type="math/tex; mode=display">\Delta f = tr(H(f))</script>
+
+<p>In the exterior calculus we have <script type="math/tex"> \Delta f = d^*d \; f</script>.</p>
+
+<p>The Laplacian of a Gaussian has well known applications in image processing.
+Given <script type="math/tex">f(x,y)</script>, we get a scale space representation when we convolve by</p>
+
+<script type="math/tex; mode=display">g(x,y,t) = \frac{e^{x^2+y^2}}{2 \pi t}</script>
+
+<script type="math/tex; mode=display">L(x,y,t) =g(x,y,t) \ast f(x,y)</script>
+
+<p>Applying <script type="math/tex">\Delta</script> to <script type="math/tex">L(x,y,t)</script> gives response to blobs of extent <script type="math/tex">\sqrt{t}</script></p>
+
+<p>There is a well known connection between diffusion processes and Schrodinger operators;</p>
+
+<script type="math/tex; mode=display"> H = \nabla^2 + V(x) \Phi \in L^2(R^n) </script>
+
+<script type="math/tex; mode=display">H \Phi = E \Phi </script>
+
+<script type="math/tex; mode=display">E = \sigma(H) </script>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/03/09/testing-gistplugin/">Testing GistPlugin</a></h1>
     
     
@@ -415,11 +417,11 @@ git push origin gh-pages</code></pre></noscript></div>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/03/09/testing-mathjax/">Testing MathJax</a>
+        <a href="/blog/2015/05/30/test-code-embedding/">Support Vector Machines</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/03/09/test-code-embedding/">Test Code Embedding</a>
+        <a href="/blog/2014/03/09/testing-mathjax/">Testing MathJax</a>
       </li>
     
       <li class="post">
