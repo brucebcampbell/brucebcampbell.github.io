@@ -4,7 +4,7 @@
   <title><![CDATA[Bruce B Campbell]]></title>
   <link href="http://brucebcampbell.github.io/atom.xml" rel="self"/>
   <link href="http://brucebcampbell.github.io/"/>
-  <updated>2015-05-30T21:47:28+00:00</updated>
+  <updated>2015-07-27T22:41:16+00:00</updated>
   <id>http://brucebcampbell.github.io/</id>
   <author>
     <name><![CDATA[Bruce Campbell]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Analytic Learning Theory]]></title>
+    <link href="http://brucebcampbell.github.io/blog/2015/07/27/analytic-learning-theory/"/>
+    <updated>2015-07-27T22:40:08+00:00</updated>
+    <id>http://brucebcampbell.github.io/blog/2015/07/27/analytic-learning-theory</id>
+    <content type="html"><![CDATA[<p>Supervised learning in its most abstract setting requires finding a function $f(x)$ given instances ${ (x_i ,f(x_i))}$. Typically ${x_i}$ is an independent and identically distribute (iid) sample from some unknown distribution.  A loss function is a random variable [ L : Ran(f) \times Ran(f) \rightarrow \dblr^+] defining the cost of misclassification.  The risk associated with a candidate function $f’$ is defined to be the expectation of the loss over the sample space $\Omega$ given that the true functional relationship is $(x,f(x))$, \begin{equation<em>} R(f’) =: E(L(f’)) =  \int L( f(\omega), f’(\omega)) d\omega.\end{equation</em>}  Statistical learning theory is concerned with assessing the approximations to $f$ given by minimizing the empirical loss associated with a sample ${x_i ,f(x_i)}$.</p>
+
+<p>It’s worth noting that minimization of expected loss is not always the best things to do.  The notion of a loss function goes back to the roots of modern probability theory and economics.  The St. Petersburg paradox is an example of a random variable $S : \dbln \rightarrow \dblr^=$ with infinite expectation limited utility. Let $W(k)$ be the winnings after k plays of from a game with outcome $S$ that pays $2^{i-1}$ with probability $p_i=1/2^i$. The expected payout is given by
+\begin{equation<em>}
+\lim_{k\To\infty} W(k)/k =E(S)=\sum\limits_{i=1}^{\infty} p_i 2^{i-1}= \infty
+\end{equation</em>} The implication for a decision theory based only on expected value is that a rational player would pay an infinite amount of money to play this game. Bernoulli introduced the notion of expected utility which takes into account the fact that a payout of $2^i$ may not have twice the utility of a payout of $2^{i+1}$ when $i$ gets large.  The utility $U$ is a random variable on the sample space representing preferences of an agent.  Loss represents the aversion of an agent to the outcomes of the sample space, $L(\omega)+U(\omega) = \alpha \; \fall \omega \in \Omega$ where $\alpha$ is constant.  Expected loss $R(f’)$ is the risk associated with choosing the approximation $f’$. Restricting the class of functions to consider when minimizing the risk for a candidate approximation to $f$ is a key aspect of classifier design</p>
+
+<p>The most common loss function is the $L^2$ or squared error loss.  This has a number of convenient numerical and statistical properties. Other common loss functions are the $0-1$ loss and the $L^1$  or sparse loss.  There is a vast literature on $L^1$ (sparse) methods in machine learning since one is always interested in a sparse representation of a signal.</p>
+
+<p>See \cite{Cucker02onthe} \cite{Vapnik95thenature} for a formal introduction to mathematical learning theory.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Notes Large Scale Linear Algebra]]></title>
+    <link href="http://brucebcampbell.github.io/blog/2015/07/10/notes-large-scale-linear-algebra/"/>
+    <updated>2015-07-10T21:35:03+00:00</updated>
+    <id>http://brucebcampbell.github.io/blog/2015/07/10/notes-large-scale-linear-algebra</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Support Vector Machines]]></title>
@@ -122,20 +150,15 @@ problem that arises during the training of the SVM.  The algorithm implements th
     <link href="http://brucebcampbell.github.io/blog/2014/03/09/CanYouHearTheShapeOfADrum/"/>
     <updated>2014-03-09T23:44:50+00:00</updated>
     <id>http://brucebcampbell.github.io/blog/2014/03/09/CanYouHearTheShapeOfADrum</id>
-    <content type="html"><![CDATA[<p>Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a
-differential operator, typically the Laplacian.   Inferring the geometry from the spectra is a type of inverse
-problem since two non isometric manifolds may share the same spectra.  Going the other way, we encounter
-isoperimetric inequalities and spectral gap theorems.  “Can One Hear the Shape of a Drum?” was the title of an article
- by Mark Kac in the American Mathematical Monthly 1966.   The frequencies at which a drum vibrate depends on its shape.
- The elliptic PDE  <script type="math/tex"> \nabla^2 A + k A = 0</script> tells us the frequencies if we know the shape.
- These frequencies are the eigenvalues of the Laplacian in the region.
- Can the spectrum of the Laplacian  tell us the shape if we know the frequencies?  Hermann Weyl showed the eigenvalues
- of the Laplacian in the compact domain <script type="math/tex">\Omega</script> are distributed according to</p>
+    <content type="html"><![CDATA[<p>Spectral Geometry concerns itself with the relationships between a geometric structure and the spectra of a differential operator, typically the Laplacian.   Inferring the geometry from the spectra is a type of inverse problem since two non isometric manifolds may share the same spectra.  Going the other way, we encounter isoperimetric inequalities and spectral gap theorems.  “Can One Hear the Shape of a Drum?” was the title of an article  by Mark Kac in the American Mathematical Monthly 1966.   The frequencies at which a drum vibrate depends on its shape.  </p>
+
+<p>The elliptic PDE  <script type="math/tex"> \nabla^2 A + k A = 0</script> tells us the frequencies if we know the shape.</p>
+
+<p>These frequencies are the eigenvalues of the Laplacian in the region.  Can the spectrum of the Laplacian  tell us the shape if we know the frequencies?  Hermann Weyl showed the eigenvalues  of the Laplacian in the compact domain <script type="math/tex">\Omega</script> are distributed according to</p>
 
 <script type="math/tex; mode=display"> N(\lambda) \sim (2 \pi)^{-d) \omega_d \lambda^{\frac{d}{2}} vol(\Omega}</script>
 
-<p>The Laplace Beltrami operator is the generalization of
- <script type="math/tex">\nabla \circ \nabla = \Delta</script> to <script type="math/tex">\mathcal{M}</script></p>
+<p>The Laplace Beltrami operator is the generalization of <script type="math/tex">\nabla \circ \nabla = \Delta</script> to <script type="math/tex">\mathcal{M}</script> </p>
 
 <script type="math/tex; mode=display">\Delta f = tr(H(f))</script>
 
@@ -157,55 +180,6 @@ Given <script type="math/tex">f(x,y)</script>, we get a scale space representati
 <script type="math/tex; mode=display">H \Phi = E \Phi </script>
 
 <script type="math/tex; mode=display">E = \sigma(H) </script>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Testing GistPlugin]]></title>
-    <link href="http://brucebcampbell.github.io/blog/2014/03/09/testing-gistplugin/"/>
-    <updated>2014-03-09T23:15:07+00:00</updated>
-    <id>http://brucebcampbell.github.io/blog/2014/03/09/testing-gistplugin</id>
-    <content type="html"><![CDATA[<p>This is a gist of instruction to host doxygen generated code documentation to githubs gh-pages web hosting. </p>
-<div><script src="https://gist.github.com/d7a6791ac1933fbd7f1d.js"></script>
-<noscript><pre><code>Example Doxygen Content http://wavescholar.github.io/klMatrixCore/ 
-
-Create your project in GitHub. 
-Go to the admin pages and enable gh-pages for your project. 
-You will need the gh-pages branch created by GitHub, and whatever initialization it does.
-
-
-# Make your gitHub project. mkdir project
-cd project/
-git init
-echo &quot;# Project README file&quot; &gt; README.markdown
-git add .
-git commit -m &quot;Project README added&quot;
-git remote add origin git@github.com:[user]/[repo].git
-git push origin master # Make a new html directory, and tell git to ignore it. mkdir html
-echo &quot;html/&quot; &gt; .gitignore
-git add .
-git commit -m &quot;.gitignore html/ folder (contains gh-pages branch)&quot;
-git push origin master # Clone the whole project (master+gh-branch) into a new subdirectorycd html/
-git clone git@github.com:[user]/[repo].git .
-git checkout origin/gh-pages -b gh-pages
-ls -la# Ignore the warning. Get rid of master, leaving gh-branches.
-git branch -d master
- # You are now on the gh-pages branch.# You might have an index.html from GitHub, otherwise an empty directory. 
-
-git branch echo &quot;h1. html README file&quot; &gt; README.textile
-git add . git commit -m &quot;html README added&quot;
-
-# Now push the gh-pages back to GitHub.git push origin gh-pages# Back to the top of your project. 
-
-# Manually push master, run doxygen, and push gh-pages each time.
-cd project
-git push origin master
-doxygen docs/Doxyfile
-cd html
-git push origin gh-pages</code></pre></noscript></div>
-
-<p>An example of such hosting for klMatrix : http://wavescholar.github.com/klMatrixCore/</p>
 
 ]]></content>
   </entry>
