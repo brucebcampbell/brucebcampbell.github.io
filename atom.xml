@@ -4,7 +4,7 @@
   <title><![CDATA[Bruce B Campbell]]></title>
   <link href="http://brucebcampbell.github.io/atom.xml" rel="self"/>
   <link href="http://brucebcampbell.github.io/"/>
-  <updated>2015-07-27T23:22:18+00:00</updated>
+  <updated>2015-07-27T23:27:29+00:00</updated>
   <id>http://brucebcampbell.github.io/</id>
   <author>
     <name><![CDATA[Bruce Campbell]]></name>
@@ -18,7 +18,9 @@
     <link href="http://brucebcampbell.github.io/blog/2015/07/27/analytic-learning-theory/"/>
     <updated>2015-07-27T22:40:08+00:00</updated>
     <id>http://brucebcampbell.github.io/blog/2015/07/27/analytic-learning-theory</id>
-    <content type="html"><![CDATA[<p>Supervised learning in its most abstract setting requires finding a function $f(x)$ given instances ${ (x_i ,f(x_i))}$. Typically ${x_i}$ is an independent and identically distribute (iid) sample from some unknown distribution.  A loss function is a random variable <script type="math/tex">L : Ran(f) \times Ran(f) \rightarrow \mathcal{R}^+</script> defining the cost of misclassification.  The risk associated with a candidate function $f’$ is defined to be the expectation of the loss over the sample space $\Omega$ given that the true functional relationship is $(x,f(x))$</p>
+    <content type="html"><![CDATA[<p>This post introduces the language of analytic learning theory. </p>
+
+<p>Supervised learning in its most abstract setting requires finding a function $f(x)$ given instances ${ (x_i ,f(x_i))}$. Typically ${x_i}$ is an independent and identically distribute (iid) sample from some unknown distribution.  A loss function is a random variable <script type="math/tex">L : Ran(f) \times Ran(f) \rightarrow \mathcal{R}^+</script> defining the cost of misclassification.  The risk associated with a candidate function $f’$ is defined to be the expectation of the loss over the sample space $\Omega$ given that the true functional relationship is $(x,f(x))$</p>
 
 <script type="math/tex; mode=display">R(f') =: E(L(f')) =  \int L( f(\omega), f'(\omega)) d\omega</script>
 

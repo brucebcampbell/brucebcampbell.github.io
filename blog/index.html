@@ -9,7 +9,7 @@
   <meta name="author" content="Bruce Campbell">
 
   
-  <meta name="description" content="Supervised learning in its most abstract setting requires finding a function $f(x)$ given instances ${ (x_i ,f(x_i))}$. Typically ${x_i}$ is an &hellip;">
+  <meta name="description" content="This post introduces the language of analytic learning theory. Supervised learning in its most abstract setting requires finding a function $f(x)$ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -154,7 +154,9 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
   </header>
 
 
-  <div class="entry-content"><p>Supervised learning in its most abstract setting requires finding a function $f(x)$ given instances ${ (x_i ,f(x_i))}$. Typically ${x_i}$ is an independent and identically distribute (iid) sample from some unknown distribution.  A loss function is a random variable <script type="math/tex">L : Ran(f) \times Ran(f) \rightarrow \mathcal{R}^+</script> defining the cost of misclassification.  The risk associated with a candidate function $f’$ is defined to be the expectation of the loss over the sample space $\Omega$ given that the true functional relationship is $(x,f(x))$</p>
+  <div class="entry-content"><p>This post introduces the language of analytic learning theory. </p>
+
+<p>Supervised learning in its most abstract setting requires finding a function $f(x)$ given instances ${ (x_i ,f(x_i))}$. Typically ${x_i}$ is an independent and identically distribute (iid) sample from some unknown distribution.  A loss function is a random variable <script type="math/tex">L : Ran(f) \times Ran(f) \rightarrow \mathcal{R}^+</script> defining the cost of misclassification.  The risk associated with a candidate function $f’$ is defined to be the expectation of the loss over the sample space $\Omega$ given that the true functional relationship is $(x,f(x))$</p>
 
 <script type="math/tex; mode=display">R(f') =: E(L(f')) =  \int L( f(\omega), f'(\omega)) d\omega</script>
 
