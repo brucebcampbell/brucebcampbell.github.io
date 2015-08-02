@@ -170,15 +170,15 @@ generalize to non integer <script type="math/tex">\beta</script>.</p>
 <table>
   <tbody>
     <tr>
-      <td>$$GOE  { M</td>
+      <td>$$GOE = {M</td>
       <td>M = \frac{A+A^T}{2}, A \in G_1(n,n)}$$</td>
     </tr>
     <tr>
-      <td>$$GUE  { M</td>
+      <td>$$GUE = {M</td>
       <td>M = \frac{A+A^\dagger}{2}, A \in G_2(n,n)}$$</td>
     </tr>
     <tr>
-      <td>$$GSE  { M</td>
+      <td>$$GSE = {M</td>
       <td>M = \frac{A+A^\ddagger}{2}, A \in G_4(n,n)}$$</td>
     </tr>
   </tbody>
@@ -188,37 +188,41 @@ generalize to non integer <script type="math/tex">\beta</script>.</p>
 $$\left(\begin{array}{cc}
         X \rightarrow  Y &amp; X^\perp \rightarrow  Y <br />
         X \rightarrow  Y^\perp &amp; X^\perp \rightarrow  Y^\perp <br />
-\end{array}\right)$$
-Which can be compactly written
+\end{array}\right)$$</p>
+
+<p>Which can be compactly written
 $$[X | X^\perp]^T [Y | Y^\perp ]=\left(
       \begin{array}{cc}
         Q<em>{11} &amp; Q</em>{12} <br />
         Q<em>{21} &amp; Q</em>{22} <br />
       \end{array}
-\right)$$
- $$\left(
+\right)$$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left(
       \begin{array}{cc}
-        Q<em>{11} &amp; Q</em>{12} <br />
-        Q<em>{21} &amp; Q</em>{22} <br />
+        Q_{11} & Q_{12} \\
+        Q_{21} & Q_{22} \\
       \end{array}
 \right)    = \left(
       \begin{array}{cc}
-        U<em>1 &amp; 0 <br />
-        0 &amp; U</em>2
+        U_1 & 0 \\
+        0 & U_2
       \end{array}
 \right) * \left(
       \begin{array}{cc}
-        C &amp; S <br />
-        -S &amp; C
+        C & S \\
+        -S & C
       \end{array}
 \right) * \left(
       \begin{array}{cc}
-        V<em>1 &amp; 0 <br />
-        0 &amp; V</em>2
+        V_1 & 0 \\
+        0 & V_2
       \end{array}
 \right)
-$$
-Where U, S are unary.</p>
+ %]]></script>
+
+<p>Where U, S are unary.</p>
 
 <p>The Tracy-Widom law of order one is the limiting distribution of the largest eigenvalue of a Wishart matrix with identity covariance when properly scaled.  This has some application to weighted directional graphs.  The largest eigenvalue of the adjacency matrix of a random d-regular directed graph follows the Tracy-Widom law.  The kernels of integrable operators describe the asymptotic eigenvalue distribution of self-adjoint random matrices from the unitary ensembles. Consider the discreet operator <script type="math/tex">K(n,m):  \l^2(N) \rightarrow \l^2(M)</script> where <script type="math/tex">% <![CDATA[
 K(n,m) = \frac{(<J a(m),a(n)>}{m-n} %]]></script> the discrete Bessel kernel and kernels arising from the almost Mathieu equation.  The celebrated paper of Tracy and Widom investigated integral kernels of the form
