@@ -9,7 +9,7 @@
   <meta name="author" content="Bruce Campbell">
 
   
-  <meta name="description" content="The classical ensembles of random matrix theory are GOE, GUE, GSE, Wishart, and MANOVA. These correspond to the weight functions of the equilibrium &hellip;">
+  <meta name="description" content="This post introduces the language of analytic learning theory. Supervised learning in its most abstract setting requires finding a function $f(x)$ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -125,156 +125,6 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/08/02/random-matrix-notes/">Random Matrix Notes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-08-02T18:07:10+00:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The classical ensembles of random matrix theory are GOE, GUE, GSE, Wishart, and MANOVA. These correspond to the weight functions of the equilibrium measure of the orthogonal polynomials Hermite, Laguerre,and Jacobi.  The Jacobians of the well known matrix factorizations are used to compute the joint eigenvalue densities of these ensembles. The distribution of eigenvalues of the GOE ensemble follow the well know Winger Semi-circle distribution.
-The joint densities up to a constant factor are listed below:
-\begin{itemize}
-  \item Hermite  \item Laguerre   \item Jacobi
-\end{itemize}
-We generated histograms in Matlab for samples from the GOE, GUE, GSE, Wishart, and MANOVA ensembles.
-The joint PDF of a generic Gaussian ramdom matrix is given by,</p>
-
-<p><script type="math/tex">P(M)=G_\beta(n,m)=\frac{1}{2 \pi^{\frac{\beta n m}{2} }} \exp^{\frac{-1}{2}\norm{M}_F }</script> where <script type="math/tex">\beta</script> encodes the dimension of the field.  Note this leaves open the possibility to
-generalize to non integer <script type="math/tex">\beta</script>.</p>
-
-<p>The equations below describes how to generate from the common ensembles starting from a sample <script type="math/tex">A \in G_\beta(n,n)</script></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>$$GOE = {M</td>
-      <td>M = \frac{A+A^T}{2}, A \in G_1(n,n)}$$</td>
-    </tr>
-    <tr>
-      <td>$$GUE = {M</td>
-      <td>M = \frac{A+A^\dagger}{2}, A \in G_2(n,n)}$$</td>
-    </tr>
-    <tr>
-      <td>$$GSE = {M</td>
-      <td>M = \frac{A+A^\ddagger}{2}, A \in G_4(n,n)}$$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The <script type="math/tex">CS</script> decomposition is a matrix factorization equivalent to four <script type="math/tex">SVD</script>’s which correspond to rotation problems
-$$\left(\begin{array}{cc}
-        X \rightarrow  Y &amp; X^\perp \rightarrow  Y <br />
-        X \rightarrow  Y^\perp &amp; X^\perp \rightarrow  Y^\perp <br />
-\end{array}\right)$$</p>
-
-<p>Which can be compactly written
-$$[X | X^\perp]^T [Y | Y^\perp ]=\left(
-      \begin{array}{cc}
-        Q<em>{11} &amp; Q</em>{12} <br />
-        Q<em>{21} &amp; Q</em>{22} <br />
-      \end{array}
-\right)$$</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\left(
-      \begin{array}{cc}
-        Q_{11} & Q_{12} \\
-        Q_{21} & Q_{22} \\
-      \end{array}
-\right)    = \left(
-      \begin{array}{cc}
-        U_1 & 0 \\
-        0 & U_2
-      \end{array}
-\right) * \left(
-      \begin{array}{cc}
-        C & S \\
-        -S & C
-      \end{array}
-\right) * \left(
-      \begin{array}{cc}
-        V_1 & 0 \\
-        0 & V_2
-      \end{array}
-\right)
- %]]></script>
-
-<p>Where U, S are unary.</p>
-
-<p>The Tracy-Widom law of order one is the limiting distribution of the largest eigenvalue of a Wishart matrix with identity covariance when properly scaled.  This has some application to weighted directional graphs.  The largest eigenvalue of the adjacency matrix of a random d-regular directed graph follows the Tracy-Widom law.  The kernels of integrable operators describe the asymptotic eigenvalue distribution of self-adjoint random matrices from the unitary ensembles. Consider the discreet operator <script type="math/tex">K(n,m):  \l^2(N) \rightarrow \l^2(M)</script> where <script type="math/tex">% <![CDATA[
-K(n,m) = \frac{(<J a(m),a(n)>}{m-n} %]]></script> the discrete Bessel kernel and kernels arising from the almost Mathieu equation.  The celebrated paper of Tracy and Widom investigated integral kernels of the form
-<script type="math/tex">K(x,y)=\frac{f(x)g(y)-f(y)g(x)}{x-y} : x \neq y  f(x), g(x) \in L^2(0,\infty)</script> are solutions to the system of <script type="math/tex">ODE</script>’s</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\frac{d}{dx}\left( \begin{array}{c}
-        f(x) \\
-        g(x)
-      \end{array}
-\right) = \left(
-      \begin{array}{cc}
-        \alpha(x) & \beta(x) \\
-        -\gamma(x) & -\alpha(x)
-      \end{array}
-\right) * \left( \begin{array}{c}
-        f(x) \\
-        g(x)
-      \end{array} \right)
- %]]></script>
-
-<p>Let <script type="math/tex">\phi_i(x)</script> be an orthogonal basis in a Hilbert Space <script type="math/tex">\mathcal{H}</script> where
-$$
-\Gamma<em>{\phi}
-= {\phi</em>(j+k-1)}_{j,k=1}^{\infty}
-$$ is the induced Hankel Matrix.</p>
-
-<p>Let <script type="math/tex">\mathcal(L) : \mathcal{H} \rightarrow \mathcal{H}</script> be compact.  Then <script type="math/tex">% <![CDATA[
-\mathcal(L): f \mapsto \sum\limits_{n=1}^{N} \omega_n <\phi_n, f> \psi_n %]]></script> where <script type="math/tex">\{\phi_i\}_{i=1}^{N}</script></p>
-
-<p>The Tracy-Widom distribution is related to to determinantal stochastic processes.  A process following this law is distributed as the largest point of a point process on the real line where the kernel K is the so-called Airy kernel.  In addition to describing the edge spectrum of random matrices, it arises in several place in combinatorial for instance the longest increasing subsequences of random permutations is described by the Tracy Widom law.  In addition to the eigenvalues of random matrices, this type of point process is used in models such as  fluctuations in first and last passage percolation, and the asymmetric exclusion process.</p>
-
-<p>The path configuration of random viscous walkers is related to the Young tableaux.  Statistical problems related to the Young tableaux include random growth, point processes, random permutation, and the random word problem. the asymptotic distribution of scaled variables from these models are  described by the Tracy Widom distribution which is the limit distribution for the largest eigenvalue of <script type="math/tex">X \in GUE</script>.</p>
-
-<p>C A Tracy and H Widom,Correlation functions, cluster functionsand spacing distribution for random matrices,
-J. Statist. Phys 1998, 92</p>
-
-<p>A Soshnikov, A note on universality of the distribution of the largest eigenvalues in certain sample covariance matrices
-J. Statist. Phys 2002, 108, p1033–1056</p>
-
-<p>D Achlioptas, Random matrices in data analysis
-Proceedings of the 15 th European Conference on Machine Learning,2004,p1–8</p>
-
-<p>N Alon and M Krivelevich and V H Vu, On the concentration of eigenvalues of random symmetric matrices,
-Israel J. Math 2000</p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -574,10 +424,6 @@ Given <script type="math/tex">f(x,y)</script>, we get a scale space representati
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2015/08/02/random-matrix-notes/">Random Matrix Notes</a>
-      </li>
     
       <li class="post">
         <a href="/blog/2015/07/27/analytic-learning-theory/">Analytic Learning Theory</a>
