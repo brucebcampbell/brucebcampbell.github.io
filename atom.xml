@@ -4,7 +4,7 @@
   <title><![CDATA[Bruce B Campbell]]></title>
   <link href="http://brucebcampbell.github.io/atom.xml" rel="self"/>
   <link href="http://brucebcampbell.github.io/"/>
-  <updated>2015-08-02T18:07:52+00:00</updated>
+  <updated>2015-08-02T18:14:35+00:00</updated>
   <id>http://brucebcampbell.github.io/</id>
   <author>
     <name><![CDATA[Bruce Campbell]]></name>
@@ -24,18 +24,29 @@ The joint densities up to a constant factor are listed below:
   \item Hermite  \item Laguerre   \item Jacobi
 \end{itemize}
 We generated histograms in Matlab for samples from the GOE, GUE, GSE, Wishart, and MANOVA ensembles.
-The joint PDF of a generic Gaussian ramdom matrix is given by,
-\begin{equation<em>}
-P(M)=G_\beta(n,m)=\frac{1}{2 \pi^{\frac{\beta n m}{2} }} \exp^{\frac{-1}{2}\norm{M}_F }
-\end{equation</em>} where <script type="math/tex">\beta</script> encodes the dimension of the field.  Note this leaves open the possibility to
+The joint PDF of a generic Gaussian ramdom matrix is given by,</p>
+
+<p><script type="math/tex">P(M)=G_\beta(n,m)=\frac{1}{2 \pi^{\frac{\beta n m}{2} }} \exp^{\frac{-1}{2}\norm{M}_F }</script> where <script type="math/tex">\beta</script> encodes the dimension of the field.  Note this leaves open the possibility to
 generalize to non integer <script type="math/tex">\beta</script>.</p>
 
-<p>The table below describes how to generate from the common ensembles starting from a sample <script type="math/tex">A \in G_\beta(n,n)</script>
-\begin{eqnarray<em>}
-    GOE  { M | M = \frac{A+A^T}{2}, A \in G_1(n,n)}\ %[bbcrevisit is necessaria and sufficient?]<br />
-    GUE  { M | M = \frac{A+A^\dagger}{2}, A \in G_2(n,n)}\ %[bbcrevisit is necessaria and sufficient?]<br />
-    GSE  { M | M = \frac{A+A^\ddagger}{2}, A \in G_4(n,n)} %[bbcrevisit is necessaria and sufficient?]
-\end{eqnarray</em>}</p>
+<p>The equations below describes how to generate from the common ensembles starting from a sample <script type="math/tex">A \in G_\beta(n,n)</script></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$$GOE  { M</td>
+      <td>M = \frac{A+A^T}{2}, A \in G_1(n,n)}$$</td>
+    </tr>
+    <tr>
+      <td>$$GUE  { M</td>
+      <td>M = \frac{A+A^\dagger}{2}, A \in G_2(n,n)}$$</td>
+    </tr>
+    <tr>
+      <td>$$GSE  { M</td>
+      <td>M = \frac{A+A^\ddagger}{2}, A \in G_4(n,n)}$$</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>The <script type="math/tex">CS</script> decomposition is a matrix factorization equivalent to four <script type="math/tex">SVD</script>’s which correspond to rotation problems
 $$\left(\begin{array}{cc}
@@ -74,40 +85,36 @@ $$
 Where U, S are unary.</p>
 
 <p>The Tracy-Widom law of order one is the limiting distribution of the largest eigenvalue of a Wishart matrix with identity covariance when properly scaled.  This has some application to weighted directional graphs.  The largest eigenvalue of the adjacency matrix of a random d-regular directed graph follows the Tracy-Widom law.  The kernels of integrable operators describe the asymptotic eigenvalue distribution of self-adjoint random matrices from the unitary ensembles. Consider the discreet operator <script type="math/tex">K(n,m):  \l^2(N) \rightarrow \l^2(M)</script> where <script type="math/tex">% &lt;![CDATA[
-K(n,m) = \frac{(<J a(m),a(n)>}{m-n} %]]&gt;</script> the discrete Bessel kernel and kernels arising from the almost Mathieu equation.  The celebrated paper of Tracy and Widom \cite{RMTTracy98correlationfunctions} investigated integral kernels of the form
-\begin{equation<em>}
-K(x,y)=\frac{f(x)g(y)-f(y)g(x)}{x-y} : x \neq y  f(x), g(x) \in L^2(0,\infty)
-\end{equation</em>}
- are solutions to the system of <script type="math/tex">ODE</script>’s</p>
+K(n,m) = \frac{(<J a(m),a(n)>}{m-n} %]]&gt;</script> the discrete Bessel kernel and kernels arising from the almost Mathieu equation.  The celebrated paper of Tracy and Widom investigated integral kernels of the form
+<script type="math/tex">K(x,y)=\frac{f(x)g(y)-f(y)g(x)}{x-y} : x \neq y  f(x), g(x) \in L^2(0,\infty)</script> are solutions to the system of <script type="math/tex">ODE</script>’s</p>
 
-<p>\begin{equation<em>}
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
 \frac{d}{dx}\left( \begin{array}{c}
-        f(x) <br />
+        f(x) \\
         g(x)
       \end{array}
 \right) = \left(
       \begin{array}{cc}
-        \alpha(x) &amp; \beta(x) <br />
-        -\gamma(x) &amp; -\alpha(x)
+        \alpha(x) & \beta(x) \\
+        -\gamma(x) & -\alpha(x)
       \end{array}
 \right) * \left( \begin{array}{c}
-        f(x) <br />
+        f(x) \\
         g(x)
       \end{array} \right)
-\end{equation</em>}</p>
+ %]]&gt;</script>
 
 <p>Let <script type="math/tex">\phi_i(x)</script> be an orthogonal basis in a Hilbert Space <script type="math/tex">\mathcal{H}</script> where
-\begin{equation<em>}
-\Gamma_{\phi}
-= {\phi_(j+k-1)}_{j,k=1}^{\infty}
-\end{equation</em>}
-is the induced Hankel Matrix.</p>
+$$
+\Gamma<em>{\phi}
+= {\phi</em>(j+k-1)}_{j,k=1}^{\infty}
+$$ is the induced Hankel Matrix.</p>
 
 <p>Let <script type="math/tex">\mathcal(L) : \mathcal{H} \rightarrow \mathcal{H}</script> be compact.  Then <script type="math/tex">% &lt;![CDATA[
 \mathcal(L): f \mapsto \sum\limits_{n=1}^{N} \omega_n <\phi_n, f> \psi_n %]]&gt;</script> where <script type="math/tex">\{\phi_i\}_{i=1}^{N}</script></p>
 
-<p>\section{The Tracy Widom Law}
-The Tracy-Widom distribution is related to to determinantal stochastic processes.  A process following this law is distributed as the largest point of a point process on the real line where the kernel K is the so-called Airy kernel.  In addition to describing the edge spectrum of random matrices, it arises in several place in combinatorial for instance the longest increasing subsequences of random permutations is described by the Tracy Widom law.  In addition to the eigenvalues of random matrices, this type of point process is used in models such as  fluctuations in first and last passage percolation, and the asymmetric exclusion process.</p>
+<p>The Tracy-Widom distribution is related to to determinantal stochastic processes.  A process following this law is distributed as the largest point of a point process on the real line where the kernel K is the so-called Airy kernel.  In addition to describing the edge spectrum of random matrices, it arises in several place in combinatorial for instance the longest increasing subsequences of random permutations is described by the Tracy Widom law.  In addition to the eigenvalues of random matrices, this type of point process is used in models such as  fluctuations in first and last passage percolation, and the asymmetric exclusion process.</p>
 
 <p>The path configuration of random viscous walkers is related to the Young tableaux.  Statistical problems related to the Young tableaux include random growth, point processes, random permutation, and the random word problem. the asymptotic distribution of scaled variables from these models are  described by the Tracy Widom distribution which is the limit distribution for the largest eigenvalue of <script type="math/tex">X \in GUE</script>.</p>
 
